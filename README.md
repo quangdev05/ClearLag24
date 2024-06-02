@@ -15,6 +15,10 @@ ClearLag24 is a server plugin designed to reduce lag on Bukkit/Spigot servers by
 
 Remember that only Admins have permission to use these commands. The plugin aims to enhance server performance and maintain a smoother gameplay experience.
 
+## Permissions
+
+- Please add `clearlag24.admin` permission to be able to use plugin commands for Minecraft server admin.
+
 ## Author
 
 - [QuangDev05](https://github.com/PhamQuang2008)
