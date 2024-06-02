@@ -1,0 +1,22 @@
+settings:
+  # Đặt khoảng thời gian (tính bằng giây) giữa các lần xóa vật phẩm tự động
+  clear-interval: 480
+  # Thông báo sẽ được gửi cho tất cả người chơi trước khi xóa vật phẩm
+  broadcast-message: "Tất cả vật phẩm trên mặt đất đã được xóa để tối ưu hóa hiệu suất máy chủ."
+  # Danh sách các thế giới mà plugin sẽ xóa vật phẩm
+  worlds:
+    - world
+    - world_nether
+    - world_the_end
+  # Nếu đặt là true, plugin sẽ xóa vật phẩm trong tất cả các thế giới. Đặt là false để chỉ xóa trong các thế giới được liệt kê ở trên
+  clear-all-worlds: false
+  # Thêm thế giới vào danh sách đen để plugin không xóa vật phẩm ở đó.
+  blacklist:
+    worlds:
+      - your_custom_world
+  # Thêm tên của các items bạn muốn vào danh sách đen ở đây, mỗi item trên một dòng.
+  # Khi thêm vào danh sách đen, item đó sẽ không bị xóa trên mặt đất.
+  items:
+    - DIAMOND_SWORD
+    - GOLDEN_APPLE
+

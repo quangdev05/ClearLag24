@@ -1,0 +1,20 @@
+name: ClearLag24
+version: '1.0'
+main: quangdev05.nexusstudio.clearlag24.ClearLag24
+api-version: '1.20'
+prefix: ClearLag24
+load: STARTUP
+authors: [QuangDev05]
+description: Limit and eliminate unnecessary waste in the server continuously to avoid the server being heavy and overloaded.
+website: https://ayo.so/quangdev05
+
+commands:
+  clearlag24:
+    description: Quản lý plugin ClearLag24
+    usage: "/<command> [reload|clear <world>|clear all]"
+    permission: clearlag24.admin
+
+permissions:
+  clearlag24.admin:
+    description: Cho phép sử dụng tất cả các lệnh của ClearLag24
+    default: op
