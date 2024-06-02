@@ -2,7 +2,8 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/PhamQuang2008/ClearLag24)
 ![GitHub license](https://img.shields.io/github/license/PhamQuang2008/ClearLag24)
-!Supports Minecraft server versions 1.12x - 1.20x
+
+- **Supports Minecraft server versions 1.12x - 1.20x**
 
 ClearLag24 is a server plugin designed to reduce lag on Bukkit/Spigot servers by automatically removing ground items (such as dropped items and experience orbs). It helps optimize server performance by periodically clearing these items. The plugin offers several features:
 
