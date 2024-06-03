@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ClearLag24 extends JavaPlugin implements CommandExecutor {
 
     // Phiên bản plugin
-    private final String version = "1.2.0";
+    private final String version = "1.3.0";
     // Tác giả của plugin
     private final String author = "QuangDev05";
 
@@ -75,15 +75,35 @@ public class ClearLag24 extends JavaPlugin implements CommandExecutor {
     }
 
     private void clearGroundItems() {
-        // Logic để xóa vật phẩm trên mặt đất...
+        if (getConfig().getBoolean("settings.clear-all-worlds")) {
+            clearAllWorlds();
+        } else {
+            for (String worldName : getConfig().getStringList("settings.worlds")) {
+                World world = Bukkit.getWorld(worldName);
+                if (world != null) {
+                    clearItemsInWorld(world);
+                }
+            }
+        }
     }
 
     private void clearItemsInWorld(World world) {
-        // Logic để xóa vật phẩm trong một thế giới cụ thể...
+        for (Entity entity : world.getEntities()) {
+            if (entity instanceof Item && !isBlacklisted(entity)) {
+                entity.remove();
+            }
+        }
     }
 
     private void clearAllWorlds() {
-        // Logic để xóa vật phẩm trong tất cả các thế giới...
+        for (World world : Bukkit.getWorlds()) {
+            clearItemsInWorld(world);
+        }
+    }
+
+    private boolean isBlacklisted(Entity entity) {
+        Item item = (Item) entity;
+        return getConfig().getStringList("settings.items").contains(item.getItemStack().getType().name());
     }
 
     private void displayHelp(CommandSender sender) {

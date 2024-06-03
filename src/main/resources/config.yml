@@ -1,3 +1,11 @@
+# Plugin made by QuangDev05
+# Plugin is already at version '${project.version}'
+# Facebook: https://www.facebook.com/quangdev05.2024
+# Discord: quangdev05
+# Discord Community: https://discord.gg/MdgvJnegbM
+# Github: https://github.com/PhamQuang2008/ClearLag24
+# Spigot: https://www.spigotmc.org/resources/clearlag24.117080/
+# BuiltByBit: https://builtbybit.com/resources/clearlag24.45790/
 settings:
   # Set the time interval (in seconds) between automatic item deletions
   clear-interval: 480
