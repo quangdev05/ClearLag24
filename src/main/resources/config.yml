@@ -24,6 +24,7 @@ settings:
       - your_custom_world
   # Add the names of the items you want to blacklist here, one item per line.
   # When added to the blacklist, the item will not be removed from the ground.
+  # Please write all Items in capital letters.
   items:
     - DIAMOND_SWORD
     - GOLDEN_APPLE
