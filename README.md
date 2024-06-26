@@ -19,10 +19,6 @@ Remember that only Admins have permission to use these commands. The plugin aims
 
 - Please add `clearlag24.admin` permission to be able to use plugin commands for Minecraft server admin.
 
-## Author
-
-- [QuangDev05](https://github.com/PhamQuang2008)
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
