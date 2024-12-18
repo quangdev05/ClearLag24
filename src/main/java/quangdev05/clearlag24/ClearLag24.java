@@ -13,31 +13,21 @@ import java.util.List;
 
 public class ClearLag24 extends JavaPlugin implements CommandExecutor {
 
-    // Phiên bản plugin
     private final String version = "1.4.0";
-    // Tác giả của plugin
     private final String author = "QuangDev05";
 
     @Override
     public void onEnable() {
-        // Kiểm tra xem file config.yml có tồn tại không
         if (!new File(getDataFolder(), "config.yml").exists()) {
-            // Nếu không tồn tại, tạo lại file config mặc định
             saveDefaultConfig();
         }
-        // Reload cấu hình từ file
         reloadConfig();
-        // Chuyển đổi giá trị clear-interval từ giây sang ticks
         long clearInterval = getConfig().getLong("settings.clear-interval") * 20L;
-        // Lên lịch xóa rác
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
-            // Gửi thông báo trước khi xóa rác
             Bukkit.broadcastMessage(getConfig().getString("settings.broadcast-message"));
-            // Xóa rác
             clearGroundItems();
         }, 0L, clearInterval);
         getLogger().info("ClearLag24 plugin has been activated!");
-        // Đăng ký lệnh
         this.getCommand("clearlag24").setExecutor(this);
         this.getCommand("clagg").setExecutor(this); // Đăng ký lệnh viết tắt
     }
@@ -56,18 +46,14 @@ public class ClearLag24 extends JavaPlugin implements CommandExecutor {
                 return true;
             }
             if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
-                // Tự động tạo lại file config nếu nó bị thiếu hoặc bị xóa
                 if (!new File(getDataFolder(), "config.yml").exists()) {
                     saveDefaultConfig();
                 }
-                // Reload cấu hình từ file
                 reloadConfig();
-                // Cập nhật lịch trình xóa rác
                 updateClearSchedule();
                 sender.sendMessage("Plugin configuration has been reloaded!");
                 return true;
             }
-            // Xử lý các lệnh khác...
             switch (args[0].toLowerCase()) {
                 case "clear":
                     if (args.length > 1) {
@@ -97,15 +83,10 @@ public class ClearLag24 extends JavaPlugin implements CommandExecutor {
     }
 
     private void updateClearSchedule() {
-        // Hủy lịch trình cũ
         Bukkit.getScheduler().cancelTasks(this);
-        // Chuyển đổi giá trị clear-interval từ giây sang ticks
         long clearInterval = getConfig().getLong("settings.clear-interval") * 20L;
-        // Lên lịch xóa rác mới
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
-            // Gửi thông báo trước khi xóa rác
             Bukkit.broadcastMessage(getConfig().getString("settings.broadcast-message"));
-            // Xóa rác
             clearGroundItems();
         }, 0L, clearInterval);
     }
